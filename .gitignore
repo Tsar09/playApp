@@ -46,6 +46,7 @@ _site
 *.md
 *~
 .bowerrc
+/sounds/
 
 # OS or Editor folders
 ._*
