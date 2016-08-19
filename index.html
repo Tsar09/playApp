@@ -16,6 +16,7 @@
     <h1>{{name}}</h1>
   </div>
   <div class="playlist container" >
+
     <!-- <button ng-click='audio.paused ? audio.play() : audio.pause()'>Pause</button> -->
     <button ng-click='playpause()'>Pause</button>
     <button ng-click='audio.restart()'>Stop</button>
@@ -25,13 +26,20 @@
 
     <label>Current Time</label>
     <input class='form-control' type=text ng-model='audio.currentTime'>
-    <div class="progress">
-        <progress class="progress form-control" value="{{audio.progress}}" max="{{audio.trackTime}}"></progress>
+    <div class="progress" >
+        <!-- <progress class="progress form-control" ng-click='audio.progress' value="{{audio.progress}}" max="{{audio.trackTime}}">
+
+        </progress> -->
+        <input class="progress form-control" type="range" min=0 max=1 step=0.01 ng-model='audio.progress'/>
      </div>
     <label>Volume</label>
-    <input class='form-control' type=range min=0 max=1 step=0.01 ng-model='audio.volume'>
-</div>
 
+    <div class="progress" >
+	  <input class="progress form-control" type="range" min=0 max=1 step=0.01 ng-model='audio.volume'/>
+   </div>
+    <!-- <input class='form-control slider' type=range min=0 max=1 step=0.01 ng-model='audio.volume'> -->
+
+</div>
 
   <script src="lib\angular\angular.js"></script>
   <script src="lib\angular-bootstrap\ui-bootstrap-tpls.js"></script>
