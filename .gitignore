@@ -46,7 +46,7 @@ _site
 *.md
 *~
 .bowerrc
-/sounds/
+content/sounds/
 
 # OS or Editor folders
 ._*
@@ -72,4 +72,3 @@ docs/.jekyll-metadata
 # Folders to ignore
 bower_components
 node_modules
-lib
