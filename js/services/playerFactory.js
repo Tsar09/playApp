@@ -7,7 +7,7 @@ audioApp.factory('PlayerFactory', ['ngAudio' , '$http', function(ngAudio, $http)
   var PlayerFactory = function(audioSrc, data) {
          //this.data = data;
          PlayerFactory.audioSrc = audioSrc;
-         PlayerFactory.data = data;
+         PlayerFactory.prototype.data = data;
          PlayerFactory.prototype.updateTrack();
      };
 
@@ -17,11 +17,12 @@ audioApp.factory('PlayerFactory', ['ngAudio' , '$http', function(ngAudio, $http)
   };
 
   PlayerFactory.prototype.updateTrack = function(){
-     audio = ngAudio.load(PlayerFactory.audioSrc +  PlayerFactory.data[currentTrack].file);
+    PlayerFactory.prototype.model =  audio = ngAudio.load(PlayerFactory.audioSrc
+      +  PlayerFactory.prototype.data[currentTrack].file);
 
-     PlayerFactory.prototype.info = PlayerFactory.data[audio.currentTrack];
-     PlayerFactory.prototype.currentNum = audio.currentTrack;
-     PlayerFactory.totalNum =  PlayerFactory.data.length;
+     PlayerFactory.prototype.info = PlayerFactory.prototype.data[currentTrack];
+     PlayerFactory.prototype.currentNum = currentTrack;
+     PlayerFactory.totalNum =  PlayerFactory.prototype.data.length;
 
      audio.play();
   };
@@ -44,19 +45,6 @@ audioApp.factory('PlayerFactory', ['ngAudio' , '$http', function(ngAudio, $http)
       }else{
         currentTrack = 0;
       }
-    };
-  //  PlayerFactory.progress = audio.progress;
-    // PlayerFactory.prototype.progress = {
-    //   get p() {
-    //     return audio.progress;
-    //   },
-    //
-    //   set p(a) {
-    //     this = audio.progress;
-    //   }
-    // };
-    PlayerFactory.prototype.progress =function(){
-      return audio.progress;
     };
 
 

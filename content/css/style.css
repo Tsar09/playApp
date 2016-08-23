@@ -1,3 +1,9 @@
+body{
+  background-image: url(/content/img/back_music.jpg) !important;
+}
+.container{
+  padding: 0;
+}
 .nav-main{
   background-color: #e14747;
   color: white;
@@ -18,6 +24,9 @@
   background: #414a59;
   overflow: hidden;
 }
+.main{
+  color:#9ba4ab;
+}
 
 .playlist{
   background: #333a46;
@@ -34,11 +43,28 @@
   padding: 10px;
 }
 .slider {
-  width: 200px;
-  margin: 100px auto;
+  background: #555;
+  color: #555;
+  display: inline-block;
+  width: 140px;
+  height: 16px;
 }
 
+table th{
+  border-top: 1px solid #2b2c39 !important;
+  border-bottom: : 1px solid #2b2c39 !important;
+}
 
+th{
+  background-color: #333a46;
+
+}
+tr td{
+  color: #fff;
+  background-color: #424955;
+  border-top: 0px solid #2b2c39 !important;
+}
+/*
 input[type='range'] {
   box-sizing: border-box;
   overflow: visible;
@@ -54,11 +80,11 @@ input[type='range'] {
   transform: translate(-50%, -50%);
   background: linear-gradient(90deg, #9b2f0b 1px, #fc7444 1px, #fc7444 2px, rgba(0, 0, 0, 0) 2px) repeat-x 1.25em 4em padding-box;
   background-size: 10% .5em;
-  /* Firefox & Chrome/ Opera need this,
-     otherwise font-size is smaller */
+  // Firefox & Chrome/ Opera need this,
+//     otherwise font-size is smaller
   font-size: 1em;
   cursor: pointer;
-  /* wish I could style this asshole */
+
 }
 [class*='-ms-'] input[type='range'] {
   background-position: 1em 4em;
@@ -67,16 +93,16 @@ input[type='range']::-webkit-slider-runnable-track {
   -webkit-appearance: none;
   box-sizing: border-box;
   z-index: -1;
-  /* fix Firefox WTF */
+  // fix Firefox WTF
   border: none;
-  /* because IE */
+  // because IE
   width: 20em;
   height: 1em;
   border-radius: 0.5em;
   box-shadow: 0 1px #fc7444;
   font-size: 1em;
   background: linear-gradient(#9b2f0b, #bc3c0f);
-  /* only Firefox & Chrome/ Opera */
+  // only Firefox & Chrome/ Opera
   background-image: linear-gradient(#ecebe9, #ecebe9), linear-gradient(#9b2f0b, #bc3c0f);
   background-repeat: no-repeat;
   background-size: 50% 100%, 100% 100%;
@@ -84,7 +110,7 @@ input[type='range']::-webkit-slider-runnable-track {
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   margin-top: -.25em;
-  /* weird shit, Chrome */
+  // weird shit, Chrome
   box-sizing: border-box;
   z-index: 1;
   width: 1.5em;
@@ -96,16 +122,16 @@ input[type='range']::-webkit-slider-thumb {
 input[type='range']::-moz-range-track {
   box-sizing: border-box;
   z-index: -1;
-  /* fix Firefox WTF */
+  // fix Firefox WTF
   border: none;
-  /* because IE */
+  // because IE
   width: 20em;
   height: 1em;
   border-radius: 0.5em;
   box-shadow: 0 1px #fc7444;
   font-size: 1em;
   background: linear-gradient(#9b2f0b, #bc3c0f);
-  /* only Firefox & Chrome/ Opera */
+  // only Firefox & Chrome/ Opera
   background-image: linear-gradient(#ecebe9, #ecebe9), linear-gradient(#9b2f0b, #bc3c0f);
   background-repeat: no-repeat;
   background-size: 50% 100%, 100% 100%;
@@ -118,16 +144,16 @@ input[type='range']::-moz-range-thumb {
   border-radius: 50%;
   box-shadow: 0 1px 0.125em rgba(174, 114, 90, 0.2);
   background: #eae9ea;
-  /* Firefox-only, it won't work in IE
-     and it's messed up in Chrome */
+  // Firefox-only, it won't work in IE
+  //   and it's messed up in Chrome
   cursor: ew-resize;
 }
 input[type='range']::-ms-track {
   box-sizing: border-box;
   z-index: -1;
-  /* fix Firefox WTF */
+  // fix Firefox WTF
   border: none;
-  /* because IE */
+  // because IE
   width: 20em;
   height: 1em;
   border-radius: 0.5em;
@@ -153,7 +179,7 @@ input[type='range']::-ms-fill-upper {
   background: transparent;
 }
 input[type='range']::-ms-tooltip {
-  /* none of this shit works :( */
+  //none of this shit works :(
   margin: .5em -2em;
   width: 4em;
   border-radius: .25em;
@@ -180,4 +206,4 @@ input[type='range']:focus, input[type='range']:active {
   line-height: 2;
   text-align: center;
   content: '50px';
-}
+}*/

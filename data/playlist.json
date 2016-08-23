@@ -1,12 +1,12 @@
 [
   {
   "title": "Дитина",
-  "artist": {"name": "Bumboks"},
+  "artist": "Bumboks",
   "file": "Bumboks-Ditina.mp3"
 },
 {
 "title": "The Big Bang",
-"artist": {"name": "Rock Mafia"},
+"artist":  "Rock Mafia",
 "file": "Rock Mafia - The Big Bang (2012 Version) [с сайта www.ololo.fm].mp3"
 }
 ]

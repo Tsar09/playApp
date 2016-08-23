@@ -10,43 +10,45 @@
 </head>
 
 <body ng-controller="playerController">
-<header  ng-include="'header.html'"></header>
+<header  ng-include src="'view/header.html'"></header>
 <div class="container main">
   <div class=" main-seek container">
-    <h1>{{name}}</h1>
+      <input class='form-control slider' type=range min=0 max=1 step=0.01 ng-model='audio.model.progress'/>
   </div>
   <div class="playlist container" >
 
     <!-- <button ng-click='audio.paused ? audio.play() : audio.pause()'>Pause</button> -->
-    <button ng-click='audio.playpause()'>Pause</button>
+    <button ng-click='audio.playpause()' >Pause</button>
     <button ng-click='audio.restart()'>Stop</button>
     <button ng-click='audio.muting = !audio.muting'>Mute</button>
     <button ng-click='audio.next()'>Next</button>
     <button ng-click='audio.prev()'>Previous</button>
 
     <label>Current Time</label>
-    <input class='form-control' type=text ng-model='audio.currentTime'>
+    <input class='form-control' type=text ng-model='audio.model.currentTime' >
     <!-- <div class="progress" > -->
         <!-- <progress class="progress form-control" ng-click='audio.progress' value="{{audio.progress}}" max="{{audio.trackTime}}">
 
         </progress> -->
-        <input class=" volume" type="range" min=0 max=1 step=0.01 ng-model='audio.progress()'/>
+        <input class="form-control slider volume" type="range" min=0 max=1 step=0.01 ng-model='audio.model.volume'/>
      <!-- </div> -->
     <label>Volume</label>
 
     <!-- <div class="slider" >
-	  <input class=" track" type="range" min=0 max=1 step=0.01 ng-model='audio.volume'/>
+	  <input class=" track" type="range" min=0 max=1 step=0.01 ng-model='audio.model.progress'/>
    </div> -->
-    <!-- <input class='form-control slider' type=range min=0 max=1 step=0.01 ng-model='audio.volume'> -->
 
+    <div ng-include src="'view/_tablePlaylist.html'"></div>
+
+</div>
 </div>
 
   <script src="lib\angular\angular.js"></script>
   <script src="lib\angular-bootstrap\ui-bootstrap-tpls.js"></script>
   <script src="js\main.js"></script>
   <script src="js\controllers\playlistController.js"></script>
-  <script src="content\css\style.js"></script>
-  <script src="js\playerFactory.js"></script>
+  <!-- <script src="content\css\style.js"></script> -->
+  <script src="js\services\playerFactory.js"></script>
   <script type="text/javascript" src="lib\angular-audio\app\angular.audio.js"></script>
 
 </body>
