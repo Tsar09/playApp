@@ -12,12 +12,29 @@
 
       </ul>
       <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class=" input-head input-search" placeholder="Search">
-        </div>
+        <div class="input-group">
+            <span class="input-group-addon search-img"><span class="glyphicon glyphicon-search"></span></span>
+            <input class="form-control input-head input-search" type="search" placeholder="Search">
 
+          </div>
       </form>
 
+
+      <div class="play-control">
+
+      <button type="button" class="btn btn-sm btn-round" ng-click='audio.prev()'>
+        <span class="glyphicon glyphicon-step-backward"></span>
+      </button>
+
+      <button type="button" class="btn btn-lg btn-round" ng-click='audio.playpause()'>
+        <span class="glyphicon glyphicon-play" ng-class="{true:'glyphicon-play', false:'glyphicon-pause'}[audio.model.paused]"></span>
+      </button>
+
+      <button type="button" class="btn btn-sm btn-round" ng-click='audio.next()'>
+        <span class="glyphicon glyphicon-step-forward"></span>
+      </button>
+
+</div>
     </div>
   </div>
 </nav>
