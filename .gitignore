@@ -46,7 +46,8 @@ _site
 *.md
 *~
 .bowerrc
-content/sounds/
+/content/sounds/
+
 
 # OS or Editor folders
 ._*

@@ -12,6 +12,7 @@ audioApp.factory('PlayerFactory', ['ngAudio' , '$http', function(ngAudio, $http)
      };
 
   PlayerFactory.prototype.playpause = function(){
+    
     var playing = audio.paused;
     return playing ? audio.play() : audio.pause();
   };
@@ -30,7 +31,7 @@ audioApp.factory('PlayerFactory', ['ngAudio' , '$http', function(ngAudio, $http)
   PlayerFactory.prototype.next = function(){
     currentTrack++;
     audio.stop();
-    if (currentTrack >= PlayerFactory.data.length){
+    if (currentTrack >= PlayerFactory.prototype.data.length){
       currentTrack=0;
     }
       PlayerFactory.prototype.updateTrack();
@@ -46,7 +47,16 @@ audioApp.factory('PlayerFactory', ['ngAudio' , '$http', function(ngAudio, $http)
         currentTrack = 0;
       }
     };
-
+  PlayerFactory.prototype.song = function(file){
+    for(var i = 0; i<PlayerFactory.prototype.data.length; i++){
+      if(PlayerFactory.prototype.data[i].file === file){
+        audio.stop();
+        currentTrack = i;
+        PlayerFactory.prototype.updateTrack();
+        break;
+      }
+    }
+  }
 
     // $http.get('data/playlist.json')
     //   .success(function(response){
