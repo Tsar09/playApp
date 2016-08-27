@@ -1,16 +1,16 @@
 <table class='table table-striped '>
   <tr>
-    <th colspan="1">Track</th>
-    <th colspan="2">Artist</th>
-    <th colspan="2">Album</th>
+    <th colspan="2" ng-click="order = 'title'">Track</th>
+    <th colspan="2" ng-click="order = 'artist'">Artist</th>
+    <th colspan="2" ng-click="order = 'album'">Album</th>
    </tr>
 
-    <tr ng-repeat="info in audio.data" ng-click="audio.song(info['file'])">
-        <td colspan="1" >
-            {{info["title"]}}
+    <tr ng-repeat="info in audio.data | filter: search | orderBy:order" ng-click="audio.song(info['file'])">
+        <td colspan="2"  >
+            {{info.title}}
         </td>
         <td colspan="2">
-            {{info["artist"]}}
+            {{info.artist}}
           </td>
         </td colspan="2">
         <td>
