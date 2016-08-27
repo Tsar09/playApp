@@ -12,34 +12,18 @@
 <body ng-controller="playerController">
   <div class="container main">
 <header  ng-include src="'view/header.html'"></header>
-<form name="myForm">
-  <div class="container">
-      <input class='form-control' type=range ng-max="slideEnded()" min=0 max=1 step=0.01 ng-model="audio.model.progress"/>
+<!-- <form name="myForm"> -->
+  <div class="container slider-info text-center">
+    <div class="row ">
+      <p2 class="col-xs-5 col-sm-4 info-currentTime ">{{audio.model.currentTime | secondsToDateTime |date:'mm:ss'}}</p2>
+      <p class="col-xs-5 col-sm-4 info-title" style="color:white">{{audio.info.artist}} - {{audio.info.title}}</p>
+      <!-- <p class="col-xs-5 col-sm-4 info-title" style="color:white">{{audio.currentNum}}</p> -->
 
+    </div>
+      <input class='form-control' id='song-slider' type=range min=0 max=1 step=0.01 ng-model="audio.model.progress"/>
   </div>
   <div class="playlist container" >
-
-    <!-- <button ng-click='audio.paused ? audio.play() : audio.pause()'>Pause</button> -->
-    <button ng-click='audio.restart()'>Stop</button>
-    <button ng-click='audio.muting = !audio.muting'>Mute</button>
-
-
-    <label>Current Time</label>
-    <input class='form-control' type=text ng-model='audio.model.currentTime' >
-    <!-- <div class="progress" > -->
-        <!-- <progress class="progress form-control" ng-click='audio.progress' value="{{audio.progress}}" max="{{audio.trackTime}}">
-
-        </progress> -->
-        <input class="form-control slider volume" type="range" min=0 max=1 step=0.01 ng-model='audio.model.volume'/>
-     <!-- </div> -->
-    <label>Volume</label>
-
-    <!-- <div class="slider" >
-	  <input class=" track" type="range" min=0 max=1 step=0.01 ng-model='audio.model.progress'/>
-   </div> -->
-
     <div ng-include src="'view/_tablePlaylist.html'"></div>
-
   </div>
 </div>
 

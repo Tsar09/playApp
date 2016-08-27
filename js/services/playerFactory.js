@@ -2,7 +2,8 @@
 
 audioApp.factory('PlayerFactory', ['ngAudio' , '$http', function(ngAudio, $http){
 
-  var audio, currentTrack =0;
+  var audio, currentTrack=0;
+
 
   var PlayerFactory = function(audioSrc, data) {
          //this.data = data;
@@ -12,17 +13,20 @@ audioApp.factory('PlayerFactory', ['ngAudio' , '$http', function(ngAudio, $http)
      };
 
   PlayerFactory.prototype.playpause = function(){
-    
+
     var playing = audio.paused;
     return playing ? audio.play() : audio.pause();
   };
 
   PlayerFactory.prototype.updateTrack = function(){
+    var vol = typeof audio === 'undefined' ? "0.5" : PlayerFactory.prototype.model.volume;
     PlayerFactory.prototype.model =  audio = ngAudio.load(PlayerFactory.audioSrc
       +  PlayerFactory.prototype.data[currentTrack].file);
 
+     PlayerFactory.prototype.model.volume = vol;
      PlayerFactory.prototype.info = PlayerFactory.prototype.data[currentTrack];
-     PlayerFactory.prototype.currentNum = currentTrack;
+
+     PlayerFactory.prototype.currentNum = audio.currentTrack;
      PlayerFactory.totalNum =  PlayerFactory.prototype.data.length;
 
      audio.play();
@@ -38,7 +42,7 @@ audioApp.factory('PlayerFactory', ['ngAudio' , '$http', function(ngAudio, $http)
   };
 
   PlayerFactory.prototype.prev = function(){
-      currentTrack--;
+      PlayerFactory.prototype.currentTrack--;
 
       if (currentTrack >= 0){
         audio.stop();
